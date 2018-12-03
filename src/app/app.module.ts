@@ -8,6 +8,7 @@ import { AgmCoreModule } from '@agm/core';
 import { WeatherComponent } from './weather/weather.component';
 import { CareerComponent } from './career/career.component';
 import { CareerResultComponent } from './career/career-result/career-result.component';
+import { FoursquareComponent } from './foursquare/foursquare.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CareerResultComponent } from './career/career-result/career-result.comp
     MapComponent,
     WeatherComponent,
     CareerComponent,
-    CareerResultComponent
+    CareerResultComponent,
+    FoursquareComponent
   ],
   imports: [
     BrowserModule,
