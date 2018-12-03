@@ -8,7 +8,11 @@ import { AgmCoreModule } from '@agm/core';
 import { WeatherComponent } from './weather/weather.component';
 import { CareerComponent } from './career/career.component';
 import { CareerResultComponent } from './career/career-result/career-result.component';
+<<<<<<< HEAD
 import { WikiComponent } from './wiki/wiki.component';
+=======
+import { FoursquareComponent } from './foursquare/foursquare.component';
+>>>>>>> 77c717bcbf107ae9cd0705e0bc58ab9d17597384
 
 @NgModule({
   declarations: [
@@ -17,7 +21,9 @@ import { WikiComponent } from './wiki/wiki.component';
     WeatherComponent,
     CareerComponent,
     CareerResultComponent,
-    WikiComponent
+    WikiComponent,
+    FoursquareComponent
+
   ],
   imports: [
     BrowserModule,
