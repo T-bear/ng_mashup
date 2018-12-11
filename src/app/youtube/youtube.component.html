@@ -1,0 +1,8 @@
+<div id="page-right-youtube-wrapper">
+	<h3>Videos from Vaxjo</h3>
+  	<ul>
+ 		<li *ngFor="let video of response" class="page-left-video-wrapper">
+  			<a href="http://www.youtube.com/embed/{{video.id.videoId}}" target="_blank">{{video.snippet.title}}</a>
+ 		</li>
+	</ul>
+</div>

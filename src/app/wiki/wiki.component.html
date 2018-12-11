@@ -1,3 +1,19 @@
-<p>
-  wiki works!
-</p>
+<!-- This is the code for the frontend and what will be presented for the user -->
+<div class="card">
+  <!-- The input is a test to change the apiUrl for the API request in wiki.services.ts  -->
+  <p><input type="text" (ngModel)="wikiSearch"></p>
+  <!-- presenting the wikiSearch already stated input from wiki.components.ts -->
+  {{wikiSearch}}
+  <!-- Part of the changing the API test -->
+  <button type="button" class="btn btn-primary" (click)="getText()">Click me!</button>
+  <!-- Looping a array of Wikipedia data implemented in wiki.components.ts -->
+  <div *ngFor="let wiki of wikis" class="page-left-weather-forecast-day-wrapper">
+  <!-- Presenting the data from the array -->
+    <h3>
+      <!-- Creating a link with the title from the Wikipedia data -->
+      <a href="https://en.wikipedia.org/wiki/{{wiki.title}}">{{wiki.title}}</a>
+    </h3>
+    <p>{{wiki.snippet}}</p>
+
+  </div>
+</div>

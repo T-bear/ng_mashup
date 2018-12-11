@@ -4,3 +4,15 @@
 	padding: 25px;
 	margin-bottom: 25px;
 }
+li {
+	list-style: none;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+h2 {
+	font-weight: normal;
+	text-align: center;
+}

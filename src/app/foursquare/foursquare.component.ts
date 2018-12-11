@@ -1,27 +1,36 @@
-import { Component, OnInit } from '@angular/core';
-import io from 'socket.io-client';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import {FoursquareService} from '../services/foursquare.service';
+import { Observable } from 'rxjs';
+import * as io from "socket.io-client";
 var socket = io.connect('localhost:3000');
 
 @Component({
   selector: 'app-foursquare',
   templateUrl: './foursquare.component.html',
-  styleUrls: ['./foursquare.component.scss']
+  styleUrls: ['./foursquare.component.scss'],
+  providers: [ FoursquareService ],
+
 })
+
+
 export class FoursquareComponent implements OnInit {
 
-	constructor() {
-	  	socket.on("res", function(res) {
-	  		//console.log(body);
-	  		//res = JSON.parse(body);
-	  		console.log(res);
-	  		for (var i = 0; i < res.response.groups[0].items.length; i++) {
-   				var item = res.response.groups[0].items[i];
-   				console.log(item.venue.name);
-			}
-	  	});
-	}	
+	restaurants: Array<any> = [];
+	empty: any = '';
 
-	ngOnInit() {		
-		
-	}
+	public constructor(private foursquareService:FoursquareService) { }
+	
+	ngOnInit() {
+		//Retrieving the shops from the foursquare service and passing them to the empty array called restaurants 
+		this.foursquareService.getFQ().subscribe( (res) => {
+			this.restaurants = res;	
+			//Checking if there are any shops open, if not a text will be displayed in the html
+			if (this.restaurants.length === 0) {
+				this.empty = 'There is sadly no recommended coffee shop open right now :(';
+			} else {
+				this.restaurants = res;	
+			}
+			
+		});
+	}    
 }

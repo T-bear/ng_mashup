@@ -1,18 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { AgmCoreModule } from '@agm/core';
 import { WeatherComponent } from './weather/weather.component';
 import { CareerComponent } from './career/career.component';
 import { CareerResultComponent } from './career/career-result/career-result.component';
-<<<<<<< HEAD
 import { WikiComponent } from './wiki/wiki.component';
-=======
 import { FoursquareComponent } from './foursquare/foursquare.component';
->>>>>>> 77c717bcbf107ae9cd0705e0bc58ab9d17597384
+import { io } from "socket.io-client";
+import {Observable} from 'rxjs';
+import { YoutubeComponent } from './youtube/youtube.component';
+
 
 @NgModule({
   declarations: [
@@ -22,8 +22,8 @@ import { FoursquareComponent } from './foursquare/foursquare.component';
     CareerComponent,
     CareerResultComponent,
     WikiComponent,
-    FoursquareComponent
-
+    FoursquareComponent,
+    YoutubeComponent
   ],
   imports: [
     BrowserModule,

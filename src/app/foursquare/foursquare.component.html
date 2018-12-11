@@ -1,11 +1,11 @@
-<p>
-  foursquare works!
-</p>
 <div>
-<h1>Restaurants</h1>
-  <ul>
-    <li *ngFor="let restaurant of res">
-    	{{ restaurant.name }}
-    </li>
-  </ul>
+	<ul><!-- Open Coffee shops in Växjö -->
+		<li *ngFor="let res of restaurants">
+			{{ res.name }}
+		</li>
+		<!-- A text will be displayed if all shops are closed -->
+		<li>
+			{{empty}}
+		</li>
+	</ul>
 </div>
